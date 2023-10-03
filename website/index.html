@@ -105,6 +105,38 @@
                 </div>
             </div>
         </div>
+        <!-- Papers and Articles Go Here!! -->
+        <h2>Papers & Articles <button id="togglePapers">&#x25BC;</button></h2>
+        <div class="project-list" id="papers">
+            <div class="project">
+                <div class="project-image-container">
+                    <img src="" alt="Ransomware Early Detection Paper" class="project-image">
+                </div>
+                <div class="project-title">
+                    <h3>Ransomware Early Detection Software</h3>
+                </div>
+                <div class="project-description">
+                    <p>Software to detect laterally propogating ransomware in Industrial/OT environments</p>
+                </div>
+                <div class="project-link">
+                    <a href="https://github.com/dandeboskey/snake">Link to Paper</a>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-image-container">
+                    <img src="" alt="Ransomware Early Detection Paper" class="project-image">
+                </div>
+                <div class="project-title">
+                    <h3>Virtual Burnout</h3>
+                </div>
+                <div class="project-description">
+                    <p>Signs of Virtual Burnout and how to mitigate it</p>
+                </div>
+                <div class="project-link">
+                    <a href="https://github.com/dandeboskey/snake">Link to Medium Article</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
@@ -117,6 +149,17 @@
     <script>
         document.getElementById("toggleProjects").addEventListener("click", function() {
             var projectList = document.getElementById("projectList");
+            if (projectList.style.display === "none" || projectList.style.display === "") {
+                projectList.style.display = "block";
+                this.innerHTML = "&#x25B2;"; // Change to up arrow when expanded
+            } else {
+                projectList.style.display = "none";
+                this.innerHTML = "&#x25BC;"; // Change back to down arrow when collapsed
+            }
+        });
+
+        document.getElementById("togglePapers").addEventListener("click", function() {
+            var projectList = document.getElementById("papers");
             if (projectList.style.display === "none" || projectList.style.display === "") {
                 projectList.style.display = "block";
                 this.innerHTML = "&#x25B2;"; // Change to up arrow when expanded
