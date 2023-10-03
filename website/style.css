@@ -51,23 +51,58 @@ header h4, .profile-details h1, .profile-details h4, .profile-details p {
     border: 1px solid #e0e0e0;
     padding: 15px;
     margin-top: 20px;
-    display: flex;        /* Use flex to lay out the image and project details side by side */
-    align-items: center;  /* Vertically aligns the content */
+    display: flex;
+}
+
+.project-image-container {
+    width: 100px;          /* Fixed width for images */
+    padding-right: 20px;   /* Space between the image and the next column */
+    text-align: center;    /* Center the image horizontally */
 }
 
 .project-image {
-    width: 100px;         /* You can adjust this based on the desired size */
-    height: 100px;        /* Keeping it square, but adjust as needed */
-    margin-right: 20px;   /* Adds some space between the image and project details */
-    object-fit: cover;    /* Ensures images are resized correctly within the dimensions */
-    border-radius: 8px;   /* Optional: Rounds the edges for a smoother look */
+    max-width: 100%;       /* Ensuring the image doesn't overflow the container */
+    height: auto;          /* Keeping the aspect ratio */
+    border-radius: 8px;    
+}
+
+.projects {
+    text-align: center;
+}
+
+.project-title,
+.project-description, 
+.project-link {
+    flex: 1;         /* Allows these sections to take equal width */
+    padding: 0 15px;      /* Some padding for visual separation */
+}
+
+/* Optional styling to center-align everything vertically */
+.project-title, 
+.project-description, 
+.project-link, 
+.project-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project:hover {
     background-color: #f9f9f9;
 }
 
-.bio, .projects {
+.project-list {
+    display: none;
+    /* other styles */
+}
+
+#toggleProjects {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.bio, .project {
     padding: 20px;
     max-width: 800px;
     margin: 20px auto;
